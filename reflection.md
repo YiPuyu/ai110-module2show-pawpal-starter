@@ -7,6 +7,16 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+My initial UML design for PawPal+ includes five main classes: Owner, Pet, Task, ScheduledItem, and Schedule.
+
+Owner: Stores the owner's name and available time; checks if a task fits in the schedule.
+Pet: Stores pet details (name, species, age, notes) and provides a readable display.
+Task: Stores task info (title, duration, priority), tracks completion, and provides priority for scheduling.
+ScheduledItem: Represents a task at a specific time, calculates end time, and formats display.
+Schedule: Manages the daily plan, builds it from tasks considering priorities and available time, and provides summaries and queries.
+
+This design separates responsibilities clearly: Owner and Pet are entities, Task represents actions, ScheduledItem represents scheduled occurrences, and Schedule manages the overall plan.
+
 **b. Design changes**
 
 - Did your design change during implementation?
