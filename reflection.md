@@ -30,11 +30,22 @@ This design separates responsibilities clearly: Owner and Pet are entities, Task
 
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
+Time availability: Each owner has a daily limit of available minutes (e.g., 120 min). Tasks cannot exceed this limit.
+Task priority: Tasks are labeled high, medium, or low priority; higher-priority tasks are scheduled first.
+Task duration: The scheduler checks whether a task fits in the remaining available time.
+Pet association: Each task is linked to a specific pet to ensure correct assignment.
+
+Decision rationale:
+
+Time and priority are the most critical constraints because an owner has limited daily time, and high-priority tasks must be completed.
+Pet association ensures tasks are correctly assigned to each pet.
 
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
+Tradeoff: The current scheduler uses a greedy, priority-based algorithm and does not detect overlapping task times.
+Reasoning: This approach is simple, efficient, and easy to understand, and it ensures high-priority tasks are scheduled. Handling exact overlaps or partial conflicts would increase complexity without significant benefit for a typical pet owner.
 
 ---
 
